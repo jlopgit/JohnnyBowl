@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<title>Bowl</title>
+
+		<style>
+
+			*{
+
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body{
+
+				font-family: "Montserrat", sans-serif;
+			}
+
+			.top-node{
+				padding-top: 20px;
+				height: 100vh;
+				background-image: url(./images/samplebowl2.jpg);
+				background-size: cover;
+				background-position: center;
+			}
+
+			.top-node .navbar{
+
+				display: flex;
+				justify-content: center; /*horizontal alignment*/
+				align-items: center; /*vertical alignment*/
+				letter-spacing: 1px;
+			}
+
+			.top-node .navbar a{
+
+				color: #c32a41;
+				text-decoration: none;
+				margin: 5px;
+				font-size: 20px;
+				font-weight: bold;	
+				transition: 0.3s;
+
+			}
+
+			.top-node .navbar a:hover{
+
+				color: white;
+			}
+
+			.top-node header{
+				text-align: center;
+				color: #c32a41;
+				letter-spacing: 3px;
+			}
+
+			.top-node header h1{
+
+				font-size: 80px;
+			}
+
+			.top-node .order-services{
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 20px;
+			}
+
+			.top-node .order-services button{
+
+				height: 40px;
+				padding: 10px;
+				margin: 10px;
+				border-radius: 10px;
+				background: #c32a41;
+				color: white;
+				font-size: 15px;
+				font-weight: bold;
+				letter-spacing: 1px;
+				transition: 0.3s;
+			}
+
+			.top-node .order-services button:hover{
+
+				background: white;
+				color: #c32a41;
+			}
+			
+
+			.top-node .scroll{
+
+				/*position element in the bottom center of the div*/
+				position: absolute; 
+				bottom: 0;
+				right: 0;
+				left: 0;
+				text-align: center;
+				margin-bottom: 20px;
+			}
+
+			.top-node .scroll a{
+
+				font-size: 40px;
+				color: #d4e3e4;
+				transition: 0.3s;
+			}
+
+			.top-node .scroll a:hover{
+
+				color: #c32a41;
+			}
+
+			.mid-node .how-to{
+
+				background: #fef7e9;
+				padding-top: 70px;
+				padding-bottom: 70px;
+				text-align: center;
+			}
+
+			.mid-node .how-to h1{
+
+				color: #c32a41;
+				letter-spacing: 3px;
+			}
+
+			.mid-node .how-to .instructions{
+
+				margin-top: 50px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.mid-node .how-to .instructions > div{
+
+				padding: 20px;
+				color:  #373830;
+			}
+
+			/*.mid-node .how-to .instructions > div i{
+
+				color: #373830;
+				font-size: 70px;
+				margin-bottom: 30px;
+
+			}*/
+
+			.mid-node .how-to .instructions > div img{
+
+				height: 150px;
+				margin-bottom: 30px;
+
+			}			
+
+			.mid-node .how-to .instructions .direction i{
+
+				color: #c32a41;
+				font-size: 40px;
+			}
+
+			.mid-node .menu{
+
+				background: #ffae63;
+				padding-top: 50px;
+				padding-bottom: 50px;
+			}
+
+			.mid-node .menu h1{
+
+				text-align: center;
+				color: #c32a41;
+				letter-spacing: 3px;
+			}
+
+			.mid-node .menu .menu-items{
+
+				margin-top: 50px; 
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.mid-node .menu .menu-items .items{
+
+				padding-left: 20px;
+				padding-right: 20px;
+				flex:50%;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.mid-node .menu .menu-items .items > div{
+
+				margin-bottom: 20px;
+				color: #373830;
+			}
+
+			.mid-node .menu .menu-items .items > div span{
+
+				color: #c32a41;
+				font-size: 15px;
+			}
+
+			.bottom{
+
+				background: #373830;
+				color: #d4e3e4;
+				padding-top: 50px;
+				padding-bottom: 50px;
+			}
+
+			.bottom .social-icons{
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.bottom .social-icons i{
+
+				font-size: 30px;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+
+			.bottom h3{
+
+				margin-top: 15px;
+				text-align: center;
+				letter-spacing: 3px;
+			}
+
+			.bottom a{
+
+				color: #d4e3e4;
+				text-decoration: none;
+				transition: 0.3s;
+			}
+
+			.bottom a:hover{
+
+				color: #c32a41;
+			}
+
+			
+			@media only screen and (max-width: 600px) {
+
+				.top-node header h1{
+
+					font-size: 60px;
+				}
+
+  				
+  				/*have instructions displayed vertically*/
+  				.mid-node .how-to .instructions{
+
+					flex-direction: column; 
+				}
+
+				.mid-node .how-to .instructions .direction i{
+
+					-ms-transform: rotate(90deg); /* IE 9 */
+					-webkit-transform: rotate(90deg); /* Safari 3-8 */
+					transform: rotate(90deg);
+				}
+
+			}
+
+			@media only screen and (max-width: 414px){
+
+				.top-node header h1{
+
+					font-size: 40px;
+				}
+
+			}
+
+		</style>
+	</head>
+
+	<body>
+		
+		<div class = "top-node" id = "header">
+			<div class = "navbar" id = "nav">
+				<a href = "">Home</a>
+				<a href = "">
+					<img class = "img-thumbnail" src = "./images/rice.png" height = "80px"> 
+				</a>
+				<a href = "">ABOUT</a>
+			</div>
+
+			<header>
+				<h1>JOHNNYBOWL</h1>
+				<h3>OPEN DAILY AT 11AM TO 11PM</h3>
+			</header>
+
+			<div class = "order-services" id = "order">
+				<a>
+					<button type = "button">SEAMLESS</button>
+				</a>
+				<a>
+					<button type = "button">UBEREATS</button>
+				</a>
+			</div>
+
+			<!--
+			<div class = "scroll">
+				<button class = "scroll-arrow"><i class="fas fa-arrow-circle-down"></i></button>
+			</div>
+			-->
+		</div>
+
+		<div class = "mid-node" id = "body">
+			<div class = "how-to" id = "content1">
+				<h1>HOW TO ORDER</h1>
+
+				<div class = "instructions">
+					<div>
+						<!-- <i class='fas fa-bread-slice'></i> -->
+						<img class = "icon" src = "./images/base.png">
+						<h3>PICK YOUR VEHICLE</h3>
+					</div>
+
+					<div class = "direction">
+						<i class="fa fa-angle-right"></i>
+					</div>
+
+					<div>
+						<!-- <i class='fas fa-drumstick-bite'></i> -->
+						<img class = "icon" src = "./images/steak.png">
+						<h3>CHOOSE YOUR PROTEIN</h3>
+					</div>
+
+					<div class = "direction">
+						<i class="fa fa-angle-right"></i>
+					</div>
+
+					<div>
+						<!-- <i class='fas fa-egg'></i> -->
+						<img class = "icon" src = "./images/eggs.png">
+						<h3>ADD TOPINGS</h3>
+					</div>
+
+					<div class = "direction">
+						<i class="fa fa-angle-right"></i>
+					</div>
+
+					<div>
+						<!-- <i class='fas fa-pepper-hot'></i> -->
+						<img class = "icon" src = "./images/sauces.png">
+						<h3>PICK YOUR SAUCE</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class = "menu" id = "content2">
+				<h1>MENU</h1>
+
+				<div class = "menu-items">
+					<div class = "items">
+						
+						<div>
+							<h2>BALI</h2><span>$12.00</span>
+							<p>crispy pork belly, lemongrass sambal, cucumbers, bean sprouts, pickled carrots, cilantro, Balinese lemongrass curry sauce</p>
+						</div>
+
+						<div>
+							<h2>SEOUL</h2><span>$10.00</span>
+							<p>
+								grilled steak, kimchi, scallions, bonito flakes, sesame seeds, bean sprouts, cucumber salad and gochujang sauce</p>
+						</div>
+
+						<div>
+							<h2>MANILA</h2><span>$11.00</span>
+							<p>crispy pork belly or grilled chicken, Chinese brocoli, bean sprouts, scallions, crispy garlic, crispy shallots, poached egg, adobo sauce</p>
+						</div>
+
+						<div>
+							<h2>POKE</h2><span>$12.00</span>
+							<p>sashimi grade tuna or salmon, seaweed salad, nori, pickled carrots, scallions, daikon radish, furikake, cucumbers, soy ginger or spicy mayo sauce</p>
+						</div>
+
+					</div>
+
+					<div class = "items">
+						
+						<div>
+							<h2>CALIFORNIA</h2><span>$10.00</span>
+							<p>crispy organic tofu, poached egg, avocado, bean sprouts, pickled red onions, furikake, kale with mushrooms, japanese mayo and miso bbq sauce</p>
+						</div>
+
+						<div>
+							<h2>SAIGON</h2><span>$11.00</span>
+							<p>grilled chicken, sweet chili lime fish sauce, cucumbers, red onions, tomatoes, Thai basil, PEANUTS, garlic, lime, cilantroe</p>
+						</div>
+
+						<div>
+							<h2>PENANG</h2><span>$12.00</span>
+							<p>grilled chicken, poached egg, cilantro, sambal, scallions, lime, cucumber salad and peanut butter curry sauce (sauce contains PEANUTS)</p>
+						</div>
+
+						<div>
+							<h2>SHANGHAI</h2><span>$10.00</span>
+							<p>grilled steak, scallions, sesame seeds, Chinese broccoli with mushrooms and five spice sauce (sauce contains PEANUTS, SHELLFISH).</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class = "bottom" id = "footer">
+			<div class = "social-icons" id = "social">
+
+				<a href = ""><i class='fab fa-facebook'></i></a>
+				<a href = ""><i class="fab fa-twitter-square"></i></a>
+				<a href = ""><i class="fab fa-instagram"></i></a>
+
+				<!--
+				<button type = "button"><i class='fab fa-facebook'></i></button>
+				<button type = "button"><i class="fab fa-twitter-square"></i></button>
+				<button type = "button"><i class="fab fa-twitter-square"></i></button>
+				-->
+			</div>
+
+			<h3><a href = "">JOHNNYBOWL</a></h3>
+		</div>
+		
+	</body>
+
+</html>
+
+
